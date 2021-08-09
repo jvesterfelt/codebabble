@@ -5,6 +5,7 @@
     "main": "server.js",
     "dependencies": {
         "bcrypt": "^5.0.1",
+        "check-password-strength": "^2.0.3",
         "connect-session-sequelize": "^7.1.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
@@ -18,7 +19,8 @@
     "devDependencies": {},
     "scripts": {
         "test": "jest",
-        "start": "node server.js"
+        "start": "node server.js",
+        "seeds": "node seeds/index.js"
     },
     "repository": {
         "type": "git",
