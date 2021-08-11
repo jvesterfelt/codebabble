@@ -1,3 +1,13 @@
+const objDiff = (obj1, obj2) => {
+    let keysArr = [];
+    Object.keys(obj1).forEach(key => {
+        if (obj1[key] !== obj2[key]) {
+            keysArr.push(key)
+        }
+    });
+    return keysArr;
+};
+
 const ogPost = {
     title: $('#post-title-edit').val(),
     post: $('#post-text-edit').val(),
@@ -10,6 +20,7 @@ function getCommentObj(event) {
 
     const commentObj = {
         comment_text: $("#comment-text-input").val(),
+        user_id: $("#edit-post-form").attr("user-id"),
         post_id: $("#post-title").attr("data-post-id")
     }
     createCommentHandler(commentObj)
@@ -120,14 +131,14 @@ function enableDeleteBtn() {
     setTimeout(function() {
         clearInterval(disableTimer)
         $("#delete-timer").text("");
-        $("#delete-goal-confirm").removeClass("disabled");
-    }, 3000)
+        $("#delete-post-confirm").removeClass("disabled");
+    }, 0)
 
     disableTimer
 }
 
 $(".modal").on("hidden.bs.modal", function() {
-    $("#delete-goal-confirm").addClass("disabled");
+    $("#delete-post-confirm").addClass("disabled");
 });
 
 $('#new-comment-form').on('submit', getCommentObj);
