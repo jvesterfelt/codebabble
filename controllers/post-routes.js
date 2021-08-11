@@ -17,9 +17,8 @@ router.get('/:id', withAuth, (req, res) => {
             ],
             include: [{
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
-            }],
-            plain: true
+                attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at', [sequelize.literal("(SELECT username FROM user where user.id = blogpost.user_id)"), 'username']],
+            }]
         })
         .then(dbPostData => {
             const postData = dbPostData.get({ plain: true })

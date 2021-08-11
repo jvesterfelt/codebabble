@@ -39,7 +39,8 @@
         {{#each postData.comments as |comment|}}
         <div note-id="{{id}}">
             <p class="mb-2 pre-wrap">{{comment.comment_text}}</p>
-            <p class="fw-light fs-7 mb-1 text-darkest-light">Posted: {{format_date comment.created_at}}</p>
+            <p class="fw-light fs-7 mb-1 text-darkest-light">Posted: {{format_date comment.created_at}}</p> 
+            <p class="fw-light fs-7 mb-1 text-darkest-light">Created by: {{comment.username}}</p>     
             <hr class="my-2">
         </div>
         {{/each}}
