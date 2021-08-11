@@ -1,0 +1,43 @@
+<h3 class="fw-bold text-secondary">Signup</h3>
+<form action="" id="signup-form">
+    <div class="row mb-3">
+        <div class="col">
+            <label for="first-name" class="form-label text-secondary">First Name</label>
+            <input type="text" name="first-name" id="first-name-input" class="form-control" placeholder="John">
+        </div>
+        <div class="col">
+            <label for="last-name" class="form-label text-secondary">Last Name</label>
+            <input type="text" name="last-name" id="last-name-input" class="form-control" placeholder="Snow">
+        </div>
+    </div>
+    <div id="email-div" class="mb-3">
+        <label for="email" class="form-label text-secondary">Email Address</label>
+        <input type="email" name="email" id="email-input" class="form-control" placeholder="jsnow@goalgetter.com">
+    </div>
+    <div id="username-div" class="mb-3">
+        <label for="username" class="form-label text-secondary">Username</label>
+        <input type="text" name="username" id="username-input" class="form-control" placeholder="ID_10_T">
+    </div>
+    <div id="password-req" class="mb-4">
+        <label for="password" class="form-label text-secondary">Password</label>
+        <input type="password" name="password" id="password-input" class="form-control" placeholder="**********">
+        <p class="mt-1 mb-0 fs-6" id="password-strength">Password Strength: </p>
+        <div class="form-text">
+            <p class="mb-1">Password must be at least six characters in length, and contain characters from three of the following four categories:</p> 
+            <ul>
+                <li>English uppercase characters (A through Z).</li>
+                <li>English lowercase characters (a through z).</li>
+                <li>Base 10 digits (0 through 9).</li>
+                <li>Non-alphabetic characters (for example, !, $, #, %).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mb-3">
+        <button type="submit" class="btn btn-dark me-2 flex-grow-1">Signup</button>
+        <a href="/" type="button" class="link-unstyled mx-2 p-0 my-auto">Cancel</a>
+    </div>
+    <p class='text-primary fs-9 fst-italic text-center'>Have an account? <a href='/login' class="link-unstyled text-secondary" type="button">LOGIN</a></p>
+    <p class='text-primary fst-italic text-center align-items-center'><a href='/' class="link-untyled text-secondary" type="button">HOME</a></p>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/assets/js/login.js"></script>

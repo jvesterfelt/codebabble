@@ -1,0 +1,23 @@
+<div class="modal" tabindex="-1" id="new-post-modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+            <h3 class="fw-bold text-secondary">New Posting</h3>
+            <form action="" id="new-post-form" user-id="{{user_id}}">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="post-title-input" placeholder="Enter your title...">
+                    <label for="post-title-input">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Tell us something new..."
+                        id="post-text-input" style="height: 200px" spellcheck="true"></textarea>
+                    <label for="post-text-input">Blogpost</label>
+                </div>
+                <div class="d-flex justify-content-end mb-3" id="submit-wrapper">
+                    <button type="submit" class="btn btn-secondary me-2 flex-grow-1">Post it!</button>
+                    <a href="/dashboard" type="button" class="link-unstyled mx-2 p-0 my-auto" data-bs-dismiss="modal"
+                        aria-label="Close">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<article class="col-xl-4 col-lg-6 col-sm-12">
+    <div class="card" type="button" post-id="{{id}}" onclick="location.href='/post/{{id}}'">
+        <div class="card-body">
+            {{!-- Goal Title and Due Date --}}
+            <div class="d-flex align-items-center mb-2 text-elipsis">
+                <h4 class="text-primary fw-bold m-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Blogpost Title" >{{title}}&nbsp;</h4>
+            </div>
+            <div>
+                <h5 class="text-secondary m-0">Posting&nbsp;</h5>
+                <p>
+                    {{post}}
+                </p>
+            </div>
+        </div>
+    </div>
+</article>

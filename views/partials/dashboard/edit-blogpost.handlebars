@@ -1,0 +1,24 @@
+<div class="modal" tabindex="-1" id="edit-blogpost-modal">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content p-3">
+            <div id="edit-modal-header">
+                <h3 class="fw-bold text-secondary">Edit Posting</h3>
+            </div>
+            <form action="" id="edit-post-form" user-id="{{user_id}}">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="post-title-edit" value="{{title}}">
+                    <label for="post-title-edit">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="post-text-edit" style="height: 200px" spellcheck="true">{{post}}</textarea>
+                    <label for="post-text-edit">Post</label>
+                </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <button type="submit" class="btn btn-secondary me-2 flex-grow-1">Update Blogpost!</button>
+                    <a type="button" class="link-unstyled mx-2 p-0 my-auto" data-bs-dismiss="modal"
+                        aria-label="Close">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
