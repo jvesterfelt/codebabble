@@ -1,0 +1,15 @@
+<div class="row container mx-auto g-4">
+<div class="d-flex justify-content-between align-items-center">
+    <h3 class="text-secondary align-items-center text-center">Blogposts</h3>
+</div>
+    <hr class="m-1">
+    {{#if posts}}
+    {{#each posts as |post|}}
+        {{>postCard post}}
+    {{/each}}
+    {{else}}
+        <h5 class="text-darkest-light align-items-center text-center">Looks like there aren't any posts! <a class="link-unstyled text-decoration-none text-success align-items-center text-center" href="/signup">Start your own blog!</a></h5>
+    {{/if}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="/assets/js/logout.js"></script>

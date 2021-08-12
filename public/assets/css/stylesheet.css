@@ -1,13 +1,21 @@
-body,
 html {
     height: 100%;
 }
 
-#hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.3));
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+
+/* #hero {
+    width: 100%;
+    position: fixed;
+}
+
+#hero-img {
+    width: 80%;
+    align
+} */
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
