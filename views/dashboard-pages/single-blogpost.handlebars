@@ -5,11 +5,11 @@
             <h3 class="text-success" id="post-title" data-post-id="{{postData.id}}" data-logged-in-user="{{loggedInUser.user_id}}">{{postData.title}}</h3>
         </div>
         {{#if loggedIn}}
-        <div class="d-flex">
+        {{!-- <div class="d-flex">
             <i class="fas fa-edit text-darkest-light dark-hover" id="edit-post-btn" type="button"></i>
             <span class="border-darkest-light mx-3 border-end border-2"></span> 
             <p class="fas fa-trash text-darkest-light dark-hover" type="button" id="delete-post-modal-btn"></p>
-        </div>
+        </div> --}}
         {{/if}}
     </div>
     {{>dashboard/edit-post-modal postData}}
