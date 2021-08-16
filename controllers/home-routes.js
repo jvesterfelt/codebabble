@@ -47,6 +47,46 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/post/:id', (req, res) => {
+    Blogpost.findByPk(req.params.id, {
+            attributes: [
+                'id',
+                'title',
+                'post',
+                'user_id',
+                'created_at'
+            ],
+            include: [{
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }]
+        })
+        .then(dbBlogpostData => {
+            if (dbBlogpostData) {
+                const postData = dbBlogpostData.get({ plain: true });
+
+                if (req.session.user_id) {
+                    const loggedInUser = { user_id: req.session.user_id }
+                    loggedIn = true;
+                    res.render('home-pages/single-blogpost', { layout: 'main', postData, loggedInUser, loggedIn })
+                } else {
+                    loggedIn = false;
+                    res.render('home-pages/single-blogpost', { layout: 'main', postData, loggedIn });
+                }
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
