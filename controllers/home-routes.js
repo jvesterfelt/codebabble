@@ -2,18 +2,19 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Blogpost, Comment } = require('../models');
 
-router.get('/', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-    }
-    res.render('homepage', {
-        loggedIn: req.session.loggedIn
-    })
-});
+// router.get('/', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//     }
+//     res.render('homepage', {
+//         loggedIn: req.session.loggedIn
+//     })
+// });
 
 router.get('/', (req, res) => {
     Blogpost.findAll({
             attributes: [
+                'id',
                 'title',
                 'post',
                 'user_id',
@@ -30,9 +31,15 @@ router.get('/', (req, res) => {
         })
         .then(dbBlogpostData => {
             const posts = dbBlogpostData.map(post => post.get({ plain: true }));
-            console.log(posts)
-            const loggedInUser = { user_id: req.session.user_id }
-            res.render('homepage', { layout: "homepage", posts })
+
+            if (req.session.user_id) {
+                const loggedInUser = { user_id: req.session.user_id }
+                loggedIn = true;
+                res.render('homepage', { layout: 'main', posts, loggedInUser, loggedIn })
+            } else {
+                loggedIn = false;
+                res.render('homepage', { layout: 'main', posts, loggedIn });
+            }
         })
         .catch(err => {
             console.log(err);

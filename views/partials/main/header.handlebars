@@ -1,21 +1,19 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-primary bg-secondary shadow sticky-lg-top">
         <div class="container-fluid mx-2">
-            {{#if loggedIn}}
-            <a class="navbar-brand text-white-50 fw-bold fs-3" href="/dashboard">CODEBABBLE</a>
-            {{else}}
-            <a class="navbar-brand text-white-50 fw-bold fs-3" href="/">CODEBABBLE</a>
-            {{/if}}
             <div class="d-flex">
                 {{#if loggedIn}}
                 <button class="btn btn-danger me-2 fw-bold text-light" type="button"
                     onclick="location.href='/'" id="logout">Logout</button>
+                <button class="btn btn-light me-2 fw-bold text-dark" type="button"
+                    onclick="location.href='/dashboard'" id="logout">Dashboard</button>
                 {{else}}
                 <button class="btn btn-success me-2 fw-bold text-light bg-opacity-10" type="button"
                     onclick="location.href='/signup'">Signup</button>
                 <button class="btn btn-light fw-bold" type="button" onclick="location.href='/login'">Login</button>
                 {{/if}}
             </div>
+            <a class="navbar-brand text-white-50 fw-bold fs-3 text-center" href="/">CODEBABBLE</a>
         </div>
     </nav>
 </header>
