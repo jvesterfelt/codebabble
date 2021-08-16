@@ -18,9 +18,7 @@ Download source files, update the db connection data, install db with schema, ru
 This site is intended simply as an educational assignment and will have no official use.
     
 #### Usage Screenshots:
-
-    
-
+![image](https://user-images.githubusercontent.com/81572838/129501185-02c7922d-aff1-4633-901f-24d6170b7ff4.png)
     
 ## Contributing
 Before contributing to this project please review the Contributor Covenant Code of Conduct:
