@@ -14,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
                 'id',
                 'title',
                 'post',
+
                 'user_id'
             ],
             include: [{
@@ -72,10 +73,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
         })
         .then(dbBlogpostData => {
             if (dbBlogpostData) {
-                const posts = dbBlogpostData.get({ plain: true });
+                const postData = dbBlogpostData.get({ plain: true });
 
                 res.render('edit-blogpost', {
-                    post,
+                    postData,
                     loggedIn: true
                 });
             } else {
